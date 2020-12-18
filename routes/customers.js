@@ -42,7 +42,7 @@ router.put('/:id', auth, async (req, res) => {
 })
 
 router.delete('/:id', auth, async (req, res) => {
-  const customer = await Customer.findByIdAndRemove(req.params.id)
+  const customer = await Customer.deleteOne(req.params.id)
 
   if (!customer) return res.status(404).send('The customer with the given ID was not found.')
 
