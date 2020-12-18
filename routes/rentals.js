@@ -31,6 +31,7 @@ router.post('/', auth, async (req, res) => {
       _id: customer._id,
       name: customer.name,
       phone: customer.phone,
+      isGold: customer.isGold,
     },
     movie: {
       _id: movie._id,
@@ -47,7 +48,7 @@ router.post('/', auth, async (req, res) => {
         { _id: movie._id },
         {
           $inc: { numberInStock: -1 },
-        }
+        },
       )
       .run()
 

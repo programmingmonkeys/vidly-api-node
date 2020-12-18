@@ -33,7 +33,7 @@ router.put('/:id', auth, async (req, res) => {
       isGold: req.body.isGold,
       phone: req.body.phone,
     },
-    { new: true }
+    { new: true },
   )
 
   if (!customer) return res.status(404).send('The customer with the given ID was not found.')

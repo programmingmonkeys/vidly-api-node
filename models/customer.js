@@ -20,7 +20,7 @@ const Customer = mongoose.model(
       minlength: 5,
       maxlength: 50,
     },
-  })
+  }),
 )
 
 function validateCustomer(customer) {

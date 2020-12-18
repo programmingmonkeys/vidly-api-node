@@ -20,7 +20,7 @@ router.post('/', [auth, validate(validateReturn)], async (req, res) => {
     { _id: rental.movie._id },
     {
       $inc: { numberInStock: 1 },
-    }
+    },
   )
 
   return res.send(rental)

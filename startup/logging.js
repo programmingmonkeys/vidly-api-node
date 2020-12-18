@@ -5,10 +5,10 @@ require('express-async-errors')
 module.exports = () => {
   winston.handleExceptions(
     new winston.transports.Console({ colorize: true, prettyPrint: true }),
-    new winston.transports.File({ filename: 'uncaughtExceptions.log' })
+    new winston.transports.File({ filename: 'uncaughtExceptions.log' }),
   )
 
-  process.on('unhandledRejection', (ex) => {
+  process.on('unhandledRejection', ex => {
     throw ex
   })
 
